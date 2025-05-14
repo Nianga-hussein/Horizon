@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --fhn-coral: #FF8B7B;
+  --fhn-green: #006B3F;
+  --fhn-yellow: #FFE5A5;
+  --fhn-blue: #A4D4E6;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.fhn-title {
+  color: var(--fhn-green);
+}
+
+.fhn-accent {
+  color: var(--fhn-coral);
+}
+
+/* Animations pour l'assistant IA */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.3s ease-in-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s infinite;
+}
+
+.animate-fade-in-down {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fadeIn 1s ease-out 0.3s backwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out 0.6s backwards;
+}
